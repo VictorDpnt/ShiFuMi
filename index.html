@@ -11,7 +11,7 @@
     
     <div class="jeu">
         <img src="./img/chifoumi-logo-orange.png" alt="">
-    <div class="player">
+     <div class="player">
         <h3>Fais ton choix :</h3>
         <div class="form">
             <button class="pierre">Pierre</button>
@@ -19,25 +19,28 @@
             <button class="ciseaux">Ciseaux</button>
         </div>
 
-    </div>
+     </div>
 
-    <h3>Choix de l'ordinateur : <span class="choixDefinitif"> </span></h3>
+        <h3>Choix de l'ordinateur : <span class="choixDefinitif"> </span></h3>
+
+
+        <div class="win">
+            <h1>Félicitatin tu as gagné !!</h1>
+        </div>
+    
+        <div class="loose">
+            <h1>Dommage tu as perdu !!</h1>
+        </div>
+    
+        <div class="egality">
+            <h1>Egalité tu peux rejouer  !!</h1>
+        </div>
+        
+    
+        <input id="rejouer" type="button" onclick='window.location.reload(false)' value="Rejouer"/>
     </div>
     
-    <div class="win">
-        <h1>Félicitatin tu as gagné !!</h1>
-    </div>
-
-    <div class="loose">
-        <h1>Dommage tu as perdu !!</h1>
-    </div>
-
-    <div class="egality">
-        <h1>Egalité tu peux rejouer  !!</h1>
-    </div>
     
-
-    <input id="rejouer" type="button" onclick='window.location.reload(false)' value="Rejouer"/>
 
     <script src="./index.js"></script>
 </body>

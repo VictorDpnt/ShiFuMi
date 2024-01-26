@@ -19,18 +19,24 @@ body{
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    
 }
 img{
     width: 400px;
     position: relative;
-    left: 50%;
+    left: 40%;
+    top: 50px;
     transform: translateX(-50%);
+    
 }
 
 h3{
-    color: rgb(255, 241, 241);
+    color: rgb(255, 119, 0);
     font-size: 2rem;
-    text-shadow: #FC0 1px 0 10px;
+    text-shadow: rgb(255, 255, 255) 1px 0 10px;
 }
 
 .resultat {
@@ -83,16 +89,13 @@ button {
 }
 
 #rejouer {
-    position: absolute;
-    top: 80%;
-    left: 50%;
+   
     width: 100px;
     height: 50px;
     cursor: pointer;
     background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
     transition: 0.3s;
     z-index: 11;
-    transform: translate(-50%, -50%) ;
     cursor: pointer;
     display: none;
 }
@@ -102,10 +105,7 @@ button {
 }
 
 .win{
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%) ;
+   
     z-index: 10;
     color: rgb(5, 162, 8);
     padding: 20px;
@@ -121,10 +121,8 @@ button {
 }
 
 .loose {
-    position: relative;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%) ;
+
+    
     z-index: 10;
     color: rgb(255, 0, 0);
     padding: 20px;
@@ -140,10 +138,9 @@ button {
 }
 
 .egality{
-    position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translate(-50%, -50%) ;
+    
+    
+  
     z-index: 10;
     color: rgb(5, 42, 162);
     padding: 20px;

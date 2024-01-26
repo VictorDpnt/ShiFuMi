@@ -20,7 +20,9 @@ const egality = document.querySelector(".egality");
 
         btnPierre.addEventListener('click', () => {
             player = pierre ;
-            btnPierre.classList.toggle("clicked")  
+            btnPierre.classList.toggle("clicked");  
+            btnCiseaux.classList.remove("clicked");
+            btnPapier.classList.remove("clicked");
             bot = arrayBot[Math.floor(Math.random()*3)]
             choixDefinitif.innerHTML= bot 
             if (bot === player) {
@@ -44,6 +46,8 @@ const egality = document.querySelector(".egality");
         btnPapier.addEventListener('click', () => {
             player = papier;  
             btnPapier.classList.toggle("clicked") 
+            btnPierre.classList.remove("clicked");
+            btnCiseaux.classList.remove("clicked");
             bot = arrayBot[Math.floor(Math.random()*3)]
             choixDefinitif.innerHTML= bot   
             if (bot === player) {
@@ -66,8 +70,10 @@ const egality = document.querySelector(".egality");
         
         btnCiseaux.addEventListener('click', () => {
             player = ciseaux ;  
-            btnCiseaux.classList.toggle("clicked") 
-            bot = arrayBot[Math.floor(Math.random()*3)]
+            btnCiseaux.classList.toggle("clicked");
+            btnPapier.classList.remove("clicked");
+            btnPierre.classList.remove("clicked");
+            bot = arrayBot[Math.floor(Math.random()*3)];
             choixDefinitif.innerHTML= bot  
             if (bot === player) {
                 egality.style.display="flex";
