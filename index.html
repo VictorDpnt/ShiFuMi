@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Shi Fu Mi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    
+    <div class="jeu">
+        <h1>Le ShiFuMi</h1>
+    <div class="player">
+        <h3>Fais ton choix :</h3>
+        <div class="form">
+            <button class="pierre">Pierre</button>
+            <button class="papier">Papier</button>
+            <button class="ciseaux">Ciseaux</button>
+        </div>
+
+    </div>
+
+    <h3>Choix de l'ordinateur : <span class="choixDefinitif"> </span></h3>
+    </div>
+    
+    <div class="win">
+        <h1>Félicitatin tu as gagné !!</h1>
+    </div>
+
+    <div class="loose">
+        <h1>Dommage tu as perdu !!</h1>
+    </div>
+
+    <div class="egality">
+        <h1>Egalité tu peux rejouer  !!</h1>
+    </div>
+    
+
+    <input id="rejouer" type="button" onclick='window.location.reload(false)' value="Rejouer"/>
+
+    <script src="./index.js"></script>
+</body>
+</html>
