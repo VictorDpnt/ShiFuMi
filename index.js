@@ -1,111 +1,40 @@
-let arrayBot = ["pierre", "papier", "ciseaux"];
-let choixDefinitif = document.querySelector(".choixDefinitif");
-const btnPierre = document.querySelector(".pierre");
-const btnPapier = document.querySelector(".papier");
-const btnCiseaux = document.querySelector(".ciseaux");
-const pierre = "pierre";
-const papier = "papier";
-const ciseaux = "ciseaux";
-const win = document.querySelector(".win");
-const loose = document.querySelector(".loose");
-const egality = document.querySelector(".egality");
+
+let btnPierre = document.getElementById('pierre');
+let btnCiseaux= document.getElementById('ciseaux');
+let btnPapier = document.getElementById('papier');
+console.log(btnPierre);
 
 
 
+ const playerChoice = (choice) => {
+     let result = document.querySelector(".result");
+     let botChoice = document.querySelector(".botChoice");
+    let arrayChoice = ["pierre", "papier", "ciseaux"];
+    let computerChoice = arrayChoice[Math.floor(Math.random()*3)];
+    
 
-    const playerChoice = () => {
+     result.classList.remove("egality", "win", "loose" );
 
-        let bot = "";
-        let player = "";
-
-        btnPierre.addEventListener('click', () => {
-            player = pierre ;
-            btnPierre.classList.toggle("clicked");  
-            btnCiseaux.classList.remove("clicked");
-            btnPapier.classList.remove("clicked");
-            bot = arrayBot[Math.floor(Math.random()*3)]
-            choixDefinitif.innerHTML= bot 
-            if (bot === player) {
-                egality.style.display="flex";
-                rejouer.style.display="block";
-            }
-            else if (
-                (player === pierre && bot === ciseaux) ||
-                (player === papier && bot === pierre) ||
-                (player === ciseaux && bot === papier)
-            ){
-                win.style.display="flex";
-                rejouer.style.display="block";
-            } else {
-                loose.style.display="flex";
-                rejouer.style.display="block";
-            } 
-            console.log(player);
-        });
-        
-        btnPapier.addEventListener('click', () => {
-            player = papier;  
-            btnPapier.classList.toggle("clicked") 
-            btnPierre.classList.remove("clicked");
-            btnCiseaux.classList.remove("clicked");
-            bot = arrayBot[Math.floor(Math.random()*3)]
-            choixDefinitif.innerHTML= bot   
-            if (bot === player) {
-                egality.style.display="flex";
-                rejouer.style.display="block";
-            }
-            else if (
-                (player === pierre && bot === ciseaux) ||
-                (player === papier && bot === pierre) ||
-                (player === ciseaux && bot === papier)
-            ){
-                win.style.display="flex";
-                rejouer.style.display="block";
-            } else {
-                loose.style.display="flex";
-                rejouer.style.display="block";
-            }
-            console.log(player);
-        });
-        
-        btnCiseaux.addEventListener('click', () => {
-            player = ciseaux ;  
-            btnCiseaux.classList.toggle("clicked");
-            btnPapier.classList.remove("clicked");
-            btnPierre.classList.remove("clicked");
-            bot = arrayBot[Math.floor(Math.random()*3)];
-            choixDefinitif.innerHTML= bot  
-            if (bot === player) {
-                egality.style.display="flex";
-                rejouer.style.display="block";
-            }
-            else if (
-                (player === pierre && bot === ciseaux) ||
-                (player === papier && bot === pierre) ||
-                (player === ciseaux && bot === papier)
-            ){
-                win.style.display="flex";
-                rejouer.style.display="block";
-            } else {
-                loose.style.display="flex";
-                rejouer.style.display="block";
-            } 
-            console.log(player);
-        });
-
-        
+    if (choice === computerChoice ) {
+        result.textContent = "Égalité !";
+        result.classList.add("egality");
+        botChoice.textContent = computerChoice.toLocaleUpperCase();
 
     }
-    playerChoice();
+    else if (
+        (choice === 'pierre' && computerChoice === 'ciseaux') ||
+        (choice === 'papier' && computerChoice === 'pierre') ||
+        (choice === 'ciseaux' && computerChoice === 'papier') ) {
+            result.textContent = "Bravo tu as gagné !!";
+            result.classList.add("win");
+            botChoice.textContent = computerChoice.toLocaleUpperCase();
 
-   
+        }
+    else{
+        result.textContent = "Dommage tu as perdu !!";
+        result.classList.add("loose");
+        botChoice.textContent = computerChoice.toLocaleUpperCase();
+    }
 
-
-
-
-
-
-
-
-
- 
+    
+ };
